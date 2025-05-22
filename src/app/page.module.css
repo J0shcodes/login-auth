@@ -3,8 +3,8 @@
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  /* --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2; */
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
@@ -13,10 +13,11 @@
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-roboto);
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
@@ -25,7 +26,7 @@
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
   }
-}
+} */
 
 .main {
   display: flex;
@@ -56,6 +57,132 @@
   font-weight: 600;
 }
 
+.main button {
+  cursor: pointer;
+}
+
+.header {
+  text-align: center;
+}
+
+.h2 {
+  /* margin-bottom: 1.75rem; */
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.p {
+  font-size: 1.25rem;
+}
+
+.form {
+  margin-top: 3.5rem;
+}
+
+.formBody {
+  margin-bottom: 3.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.875rem;
+}
+
+.input {
+  /* height: 3.75rem; */
+  padding: 1.5rem 1.125rem;
+  border: 1px solid #4d4d4d;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.input:focus {
+  /* height: 3.75rem; */
+  border: 1px solid #ababab;
+}
+
+.visibilityButton {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  right: 1.125rem;
+  top: 50%;
+}
+
+.rememberContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember {
+  display: flex;
+  gap: 1rem;
+}
+
+.login {
+  width: 100%;
+  padding: 1.125rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #f6b8fd, #316ad7);
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+.blob {
+  background-image: url("/assets/images/gradient.png");
+  width: 39%;
+  height: 91%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -8.625rem;
+  -webkit-filter: blur(150px);
+  filter: blur(150px);
+  z-index: -50;
+}
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(110%);
+  transition: transform 0.3s ease-in-out;
+  max-width: 20rem;
+  z-index: 1000;
+}
+
+.toast.success {
+  background-color: var(--success-color);
+}
+
+.toast.error {
+  background-color: var(--error-color);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
 .ctas {
   display: flex;
   gap: 16px;
@@ -68,10 +195,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
